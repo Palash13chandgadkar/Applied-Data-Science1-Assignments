@@ -1,0 +1,56 @@
+# Importing the python required packages
+import numpy as np
+import pandas as pd                    
+import matplotlib.pyplot as plt
+
+# Assignment 1 Question no.1 (Line Plot) Ans:-
+
+# Reading the .csv(comma seprated value) file using Pandas pd.read_csv()
+# read_csv() :- It is pandas function which allows to read the csv data files from directories.
+museum_visit = pd.read_csv("Museum_Visitors.csv")
+
+# Creating the DataFrame using Pd.DataFrame.
+df_museum =pd.DataFrame(data=museum_visit)  
+
+#Extracting the requierd no.of rows and columns by using iloc[] function              
+df_museum = df_museum.iloc[36:48 , :5]
+
+#Printing the data
+# print(df_museum)
+
+# Using Plt.figure() we can plot out chart.
+plt.figure(figsize =(15,9))
+
+# plt.plot() help to plot the line chart it takes two main arguments (x,y).
+plt.plot(df_museum["Date"] , df_museum["Avila Adobe"],
+         label="Avila Adobe Visits", linestyle = '-')
+plt.plot(df_museum["Date"] , df_museum["Firehouse Museum"],
+         label="Firehouse Museum Visits" , linestyle =':' )
+plt.plot(df_museum["Date"] , df_museum["Chinese American Museum"],
+        label="Chinese American Museum", linestyle ='--')
+plt.plot(df_museum["Date"] , df_museum["America Tropical Interpretive Center"],
+         label="America Tropical Center", linestyle = '-.')
+
+# xlabel & ylabel() gives the label to X-axis & Y-axis respectively.
+plt.xlabel("Months")
+plt.ylabel("Number of Visitors (in thousands)")
+
+# Using title() we can give title to our plot.
+plt.title("Museum Visits in the Year 2017")
+
+# legend():-describing the each part of the graph.
+plt.legend()
+
+# show():- With this function we can display our plot or graph.
+plt.show()
+
+
+
+
+# Assignment 1 Question no.2 Ans:-
+
+# x = pd.read_csv("List of languages by total number of speakers.csv")
+# print(x.iloc[:5 , 0:3])
+
+
+
