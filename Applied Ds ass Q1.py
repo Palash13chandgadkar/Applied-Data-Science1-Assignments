@@ -6,13 +6,15 @@ import matplotlib.pyplot as plt
 # Assignment 1 Question no.1 (Line Plot) Ans:-
 
 # Reading the .csv(comma seprated value) file using Pandas pd.read_csv()
-# read_csv() :- It is pandas function which allows to read the csv data files from directories.
+# read_csv() :- It is pandas function which allows to read the csv data 
+                # files from directories.
 museum_visit = pd.read_csv("Museum_Visitors.csv")
 
 # Creating the DataFrame using Pd.DataFrame.
 df_museum =pd.DataFrame(data=museum_visit)  
 
-#Extracting the requierd no.of rows and columns by using iloc[] function              
+#Extracting the requierd no.of rows and columns by using iloc[] function  
+# iloc[]:- Extract rows & columns by index number.            
 df_museum = df_museum.iloc[36:48 , :5]
 
 #Printing the data
@@ -20,6 +22,7 @@ df_museum = df_museum.iloc[36:48 , :5]
 
 # Using Plt.figure() we can plot out chart.
 plt.figure(figsize =(15,9))
+
 
 # plt.plot() help to plot the line chart it takes two main arguments (x,y).
 plt.plot(df_museum["Date"] , df_museum["Avila Adobe"],
@@ -42,15 +45,42 @@ plt.title("Museum Visits in the Year 2017")
 plt.legend()
 
 # show():- With this function we can display our plot or graph.
-plt.show()
+# plt.show()
+
 
 
 
 
 # Assignment 1 Question no.2 Ans:-
 
-# x = pd.read_csv("List of languages by total number of speakers.csv")
-# print(x.iloc[:5 , 0:3])
+# Reading the .csv(comma seprated value) file using Pandas pd.read_csv()
+d = pd.read_csv("Beijing Olympic 2022.csv")
 
+# Creating the DataFrame using Pd.DataFrame.
+olympic_data = pd.DataFrame(data=d) 
+        
+#Extracting the requierd no.of rows and columns by using loc[] function  
+#loc[]:- Extract rows & columns by column name.
+      
+df_total = olympic_data.loc[0:5,["NOC","Total"]]
+print(df_total)
+# passing color array for identify each country.
+c=["lightblue","gray","green","pink","orange","cyan","brown","lightgreen"]
+
+# Using Plt.figure() we can plot out chart
+plt.figure(figsize=(20,6))
+
+# plt.bar():- It helps to create the bar plot.
+plt.bar(df_total["NOC"],df_total["Total"],color = c,width = 0.5)
+
+# xlabel & ylabel() gives the label to X-axis & Y-axis respectively.
+plt.xlabel("Name Of Countries")
+plt.ylabel("Total Number of Medals Won")
+
+# Using title() we can give title to our plot.
+plt.title("Beijing Olympic 2022 Medals Won By Countries")
+
+# show():- With this function we can display our plot or graph.
+# plt.show()
 
 
