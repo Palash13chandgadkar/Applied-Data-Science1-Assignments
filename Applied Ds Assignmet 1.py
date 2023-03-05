@@ -82,7 +82,7 @@ plt.ylabel("Total Number of Medals Won")
 plt.title("Beijing Olympic 2022 Medals Won By Countries")
 
 # show():- With this function we can display our plot or graph.
-# plt.show()
+plt.show()
 
 
 
