@@ -18,9 +18,9 @@ df_museum =pd.DataFrame(data=museum_visit)
 df_museum = df_museum.iloc[36:48 , :5]
 
 #Printing the data
-# print(df_museum)
+ print(df_museum)
 
-# Using Plt.figure() we can plot out chart.
+# Using Plt.figure() we can plot our chart.
 plt.figure(figsize =(15,9))
 
 
@@ -45,13 +45,13 @@ plt.title("Museum Visits in the Year 2017")
 plt.legend()
 
 # show():- With this function we can display our plot or graph.
-# plt.show()
+ plt.show()
 
 
 
 
 
-# Assignment 1 Question no.2 Ans:-
+# Assignment 1 Question no.2 (Bar Plot) Ans:-
 
 # Reading the .csv(comma seprated value) file using Pandas pd.read_csv()
 d = pd.read_csv("Beijing Olympic 2022.csv")
@@ -87,7 +87,7 @@ plt.show()
 
 
 
-# Assignment 1 Question no.3 Ans:-
+# Assignment 1 Question no.3 (Pie plot) Ans:-
 
 
 # Reading the .csv(comma seprated value) file using Pandas pd.read_csv()
