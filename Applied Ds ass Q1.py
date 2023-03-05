@@ -60,10 +60,11 @@ d = pd.read_csv("Beijing Olympic 2022.csv")
 olympic_data = pd.DataFrame(data=d) 
         
 #Extracting the requierd no.of rows and columns by using loc[] function  
-#loc[]:- Extract rows & columns by column name.
-      
+#loc[]:- Extract rows & columns by column name.      
 df_total = olympic_data.loc[0:5,["NOC","Total"]]
 print(df_total)
+
+
 # passing color array for identify each country.
 c=["lightblue","gray","green","pink","orange","cyan","brown","lightgreen"]
 
@@ -84,3 +85,49 @@ plt.title("Beijing Olympic 2022 Medals Won By Countries")
 # plt.show()
 
 
+
+
+# Assignment 1 Question no.3 Ans:-
+
+
+# Reading the .csv(comma seprated value) file using Pandas pd.read_csv()
+emp = pd.read_csv("Unemployment analysis.csv")
+
+# Creating the DataFrame using Pd.DataFrame.
+df_emp = pd.DataFrame(data=emp)
+
+#Extracting the requierd no.of rows and columns by using loc[] function  
+#loc[]:- Extract rows & columns by column name.
+unemp = df_emp.loc[7:13 , ["Country Name","2000"]]
+
+# creting list of country name & used in pass to labels.
+name = unemp["Country Name"]
+
+# Using Plt.figure() we can plot out chart.
+plt.figure(figsize = (5,6))
+
+# plt.pie():- It helps to create the pie chart.
+plt.pie(unemp["2000"] , labels = name)
+
+# Using title() we can give title to our plot.
+plt.title("Unemployment rate in the year 2000")
+
+
+#Second Pie chart of Year 2010
+
+
+#Extracting the requierd no.of rows and columns by using loc[] function  
+#loc[]:- Extract rows & columns by column name.
+unemp1 = df_emp.loc[7:13 , ["Country Name" ,"2010"]]
+
+# Using Plt.figure() we can plot out chart.
+plt.figure()
+
+# plt.pie():- It helps to create the pie chart.
+plt.pie(unemp1["2010"],labels = name)
+
+# Using title() we can give title to our plot.
+plt.title("Unemployment rate in the year 2010")
+
+# show():- With this function we can display our plot or graph.
+plt.show()
