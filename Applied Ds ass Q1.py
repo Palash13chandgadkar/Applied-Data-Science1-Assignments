@@ -107,7 +107,7 @@ name = unemp["Country Name"]
 plt.figure(figsize = (5,6))
 
 # plt.pie():- It helps to create the pie chart.
-plt.pie(unemp["2000"] , labels = name)
+plt.pie(unemp["2000"] , labels = name,autopct='%1.1f%%')
 
 # Using title() we can give title to our plot.
 plt.title("Unemployment rate in the year 2000")
@@ -121,10 +121,10 @@ plt.title("Unemployment rate in the year 2000")
 unemp1 = df_emp.loc[7:13 , ["Country Name" ,"2010"]]
 
 # Using Plt.figure() we can plot out chart.
-plt.figure()
+plt.figure(figsize = (5,6))
 
 # plt.pie():- It helps to create the pie chart.
-plt.pie(unemp1["2010"],labels = name)
+plt.pie(unemp1["2010"],labels = name ,autopct='%1.1f%%')
 
 # Using title() we can give title to our plot.
 plt.title("Unemployment rate in the year 2010")
