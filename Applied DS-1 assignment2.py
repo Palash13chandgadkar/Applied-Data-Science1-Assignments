@@ -5,9 +5,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-data = pd.read_csv('API_19_DS2_en_csv_v2_5361599.csv', skiprows=4)
-
-# Function
+data_climate = pd.read_csv('API_19_DS2_en_csv_v2_5361599.csv', skiprows=4)
+data_climate.describe()
+# Function to read the file
 
 
 def read_world_bank_data(filename, skip):
@@ -16,12 +16,12 @@ lename as argument, reads a dataframe and
 returns two dataframes: one with years as columns and one with
 countries as columns.'''
 
-    data = pd.read_csv(filename, skiprows=skip)
+    data_climate = pd.read_csv(filename, skiprows=skip)
 
-    df_years = data.set_index(['Indicator Name', 'Country Name']).drop(
+    df_years = data_climate.set_index(['Indicator Name', 'Country Name']).drop(
         ['Country Code', 'Indicator Code'], axis=1)
 
-    df_countries = data.set_index(['Country Name']).drop(
+    df_countries = data_climate.set_index(['Country Name']).drop(
         ['Country Code', 'Indicator Code'], axis=1).T
 
     return df_years, df_countries
@@ -31,8 +31,8 @@ countries as columns.'''
 df_data = read_world_bank_data('API_19_DS2_en_csv_v2_5361599.csv', 4)
 
 # Using Statastical Function for data manipulation
-country_data = data.groupby(['Country Name', 'Indicator Name']).sum()
-country_data = data.groupby(['Country Name', 'Indicator Name']).mean()
+country_data = data_climate.groupby(['Country Name', 'Indicator Name']).sum()
+country_data = data_climate.groupby(['Country Name', 'Indicator Name']).mean()
 indicator = country_data.iloc[country_data.index.get_level_values
                               ('Indicator Name') == 'Co2 emission(kt)\
                           (% of total final energy consumption)']
