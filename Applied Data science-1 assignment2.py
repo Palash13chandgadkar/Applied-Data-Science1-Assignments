@@ -43,7 +43,7 @@ indicator.loc[:, '2005':'2010'].mean()
 years = df_data[0]
 country = df_data[1]
 
-# slicing the years
+# slicing the years dataframe
 renewable_eng = years.loc['Renewable energy consumption\
                           (% of total final energy consumption)',
                           '2005': '2010']
@@ -53,12 +53,12 @@ print(renewable_eng)
 # Droping the NaN values
 renewable_eng = renewable_eng.dropna(axis=0)
 
-# Slicing the indicator with some countries..
+# Slicing the indicator with some countries & prepare for bar plot
 renewable_eng = renewable_eng.loc[[
     'Belize', 'Colombia', 'Cyprus', 'Germany', 'Estonia'], '2005': '2010']
 
 
-# Ploting the graph
+# Ploting the first graph
 plt.figure(figsize=(10, 25))
 renewable_eng.plot.bar()
 plt.title('Renewable energy consumption')
@@ -78,7 +78,7 @@ co2_emission = co2_emission.loc[[
     'Belize', 'Colombia', 'Cyprus', 'Germany', 'Estonia'], '2005':'2010']
 print(co2_emission)
 
-# plotting the Co2 emission graph.
+# plotting the second graph.
 plt.figure(figsize=(10, 25))
 co2_emission.plot.bar()
 plt.title('CO2 emissions (kt)')
@@ -104,7 +104,7 @@ primary_enrol = primary_enrol.loc[[
 primary_enrol = primary_enrol.T
 
 
-# Ploting the graph..
+# Ploting the third graph..
 matplotlib.rc('figure', figsize=(8, 6))
 primary_enrol.plot(label='Label', linestyle=":",
                    marker='o', markersize=4, linewidth=1.2)
@@ -132,7 +132,7 @@ school = school.loc[['Belize', 'Colombia',
 school = school.T
 
 
-# plotting the graph
+# plotting the fourth graph
 matplotlib.rc('figure', figsize=(8, 6))
 school.plot(linestyle=":", marker='o', markersize=4, linewidth=1.2)
 plt.title('School enrollment, primary and secondary')
