@@ -6,7 +6,10 @@ import matplotlib.pyplot as plt
 
 
 data_climate = pd.read_csv('API_19_DS2_en_csv_v2_5361599.csv', skiprows=4)
-data_climate.describe()
+# Describe the data
+data_climate = data_climate.describe()
+
+
 # Function to read the file
 
 
